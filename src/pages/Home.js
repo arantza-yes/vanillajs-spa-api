@@ -1,14 +1,12 @@
 import getData from '../utils/getData';
 
 // let press = window.getElementById('#text');
-const press = null || document.getElementById('text');
-
-press.addEventListener('keypress', (e) => {
-  console.log(e.target.value);
-});
 
 const Home = async () => {
   const characters = await getData();
+
+  let filtrar = characters.results.filter((filtra) => (filtra.length = [0]));
+  console.log(filtrar);
 
   const view = `
     <div class="">
@@ -28,7 +26,14 @@ const Home = async () => {
       </div>
     </div>
   `;
+
   return view;
 };
+
+const press = null || document.getElementById('text');
+
+press.addEventListener('keypress', (e) => {
+  console.log(e.target.value);
+});
 
 export default Home;
