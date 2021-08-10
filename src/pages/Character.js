@@ -4,6 +4,8 @@ import getData from '../utils/getData';
 const Character = async () => {
   const id = getHash();
   const character = await getData(id);
+  //   debugger;
+
   const view = `
         <div>
             <article>
